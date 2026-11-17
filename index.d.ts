@@ -1,0 +1,7 @@
+export type Availability='operational'|'degraded'|'outage'|'unknown';
+export interface Service {id:string;name:string;category:string;status:Availability;stale:boolean;observed_at:string|null;age_seconds:number|null;regions:string[];signal:'reported_availability'}
+export interface Parameters {region?:string;q?:string;category?:string;limit?:number;offset?:number;hours?:number;status?:Availability;services?:string|string[]}
+export interface Response {status:string;generated_at:string;data_type:'cached_observations';service?:Service;services?:Service[];[key:string]:unknown}
+export class UptimeScoutError extends Error {status:number;payload:unknown;constructor(status:number,payload:unknown)}
+export class Client {constructor(licenseKey:string,options?:{baseUrl?:string;timeout?:number});request(method:string,params?:Parameters&{service?:string}):Promise<Response>;services(params?:Parameters):Promise<Response>;status(service:string,params?:Parameters):Promise<Response>;statuses(services:string|string[],params?:Parameters):Promise<Response>;summary(params?:Parameters):Promise<Response>;history(service:string,params?:Parameters):Promise<Response>;stats(service:string,params?:Parameters):Promise<Response>;incidents(params?:Parameters):Promise<Response>}
+export default Client;
