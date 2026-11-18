@@ -15,5 +15,22 @@
     "LICENSE",
     "docs",
     "examples"
-  ]
+  ],
+  "description": "UptimeScout API client for regional service availability, observation history and localized service metadata",
+  "keywords": [
+    "uptimescout",
+    "uptime",
+    "availability",
+    "status-api",
+    "monitoring",
+    "sdk"
+  ],
+  "homepage": "https://uptimescout.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsonscraper/uptimescout-api-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jsonscraper/uptimescout-api-node/issues"
+  }
 }
